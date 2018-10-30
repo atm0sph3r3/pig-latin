@@ -1,0 +1,6 @@
+[package]
+name = "piglatin"
+version = "0.1.0"
+authors = ["tb120 <tb120@users.noreply.github.com>"]
+
+[dependencies]
