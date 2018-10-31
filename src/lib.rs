@@ -7,7 +7,7 @@ pub mod piglatin {
     }
 
     pub fn translate(input: &str) -> String {
-        let mut translated_output = String::from("");
+        let mut translated_output = String::new();
 
         for word in input.split_whitespace() {
             let converted_word = convert_word(word);
@@ -19,10 +19,9 @@ pub mod piglatin {
     }
 
     pub fn convert_word(input: &str) -> String {
-        if get_first_letter_type(input) == LetterType::CONSONANT {
-            convert_consonant_word(input)
-        } else {
-            convert_vowel_word(input)
+        match get_first_letter_type(input) {
+            LetterType::CONSONANT => convert_consonant_word(input),
+            LetterType::VOWEL => convert_vowel_word(input),
         }
     }
 
@@ -45,7 +44,7 @@ pub mod piglatin {
         let first_letter = get_first_letter(input);
 
         let mut is_first = true;
-        let mut output = String::from("");
+        let mut output = String::new();
 
         for letter in input.chars() {
             if is_first {
